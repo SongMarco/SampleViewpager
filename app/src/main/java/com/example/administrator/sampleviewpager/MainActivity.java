@@ -54,11 +54,11 @@ public class MainActivity extends AppCompatActivity
             switch(position)
             {
                 case 0:
-                    return new FragmentA();
+                    return new FragmentMotivation();
                 case 1:
-                    return new FragmentB();
+                    return new FragmentWorkout();
                 case 2:
-                    return new FragmentC();
+                    return new FracmentC();
                 default:
                     return null;
             }

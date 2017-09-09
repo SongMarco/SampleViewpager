@@ -1,5 +1,10 @@
 <resources>
-    <string name="app_name">SampleViewpager</string>
-    <string name="action_settings">Settings</string>
-    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="app_name">운동합시다!</string>
+    <string name="action_settings">설정</string>
+    <string name="overflow">overflow</string>
+    <string name="action_removeItems">삭제하기</string>
+    <string name="action_selectMult">다중선택</string>
+    <string name="action_selectAll">전체 선택</string>
+    <string name="action_clearSelection">선택 해제</string>
+    <string name="action_add_workout">운동 추가하기</string>
 </resources>

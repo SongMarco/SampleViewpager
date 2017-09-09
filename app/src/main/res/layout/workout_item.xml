@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textViewWoName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="WoName"
+            android:textAlignment="center"
+            android:textColor="@color/colorMBlue"
+            android:textSize="25sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+
+            >
+
+            <FrameLayout
+                android:id="@+id/frameForTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textViewForTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textColor="@color/colorHBlue"
+                    android:textSize="20dp" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/frameForNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textViewWoNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_alignParentLeft="true"
+
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="left"
+
+                    android:layout_marginRight="5dp"
+
+                    android:layout_weight="1"
+                    android:text="nums"
+                    android:textColor="@color/colorHBlue"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textViewTimerSetting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_alignParentEnd="true"
+
+
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="end"
+                android:text="timer"
+                android:textColor="@color/colorHBlue"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textViewWoSet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:layout_alignParentTop="true"
+
+
+            android:layout_marginRight="10dp"
+            android:layout_toRightOf="@+id/textViewWoNum"
+            android:layout_weight="1"
+            android:text="sets"
+            android:textColor="@color/colorHBlue"
+
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <CheckBox
+        android:id="@+id/checkBoxForWo"
+        android:layout_width="wrap_content"
+
+        android:layout_height="match_parent"
+
+        app:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        android:buttonTint="@color/colorPrimary"
+
+        android:clickable="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+
+
+
+       />
+
+</LinearLayout>

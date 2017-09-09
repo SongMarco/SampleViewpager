@@ -5,23 +5,23 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
+import android.widget.LinearLayout;
 
-public class FragmentC extends Fragment
+public class FragmentMotivation extends Fragment
 {
-    public FragmentC()
+    public FragmentMotivation()
     {
     }
+
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        RelativeLayout layout = (RelativeLayout) inflater.inflate(R.layout.fragment_c, container, false);
+        LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.fragmant_a, container, false);
         return layout;
     }
 }

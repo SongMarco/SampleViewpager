@@ -5,11 +5,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
+import android.widget.LinearLayout;
 
-public class FragmentB extends Fragment
+public class FracmentC extends Fragment
 {
-    public FragmentB()
+    public FracmentC()
     {
     }
     @Override
@@ -21,7 +21,7 @@ public class FragmentB extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        RelativeLayout layout = (RelativeLayout) inflater.inflate(R.layout.fragment_b, container, false);
+        LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.fragment_c, container, false);
         return layout;
     }
 }
