@@ -1,54 +1,72 @@
 package com.example.administrator.sampleviewpager;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
-    private boolean isFragmentB = true ;
-
-
-
+public class MainActivity extends AppCompatActivity
+{
+    ViewPager vp;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        FragmentManager fm = getFragmentManager();
-        FragmentTransaction fragmentTransaction = fm.beginTransaction();
-        fragmentTransaction.add(R.id.fragmentBorC, new FragmentB());
-        fragmentTransaction.commit();
+        vp = (ViewPager)findViewById(R.id.vp);
+        Button btn_first = (Button)findViewById(R.id.btn_first);
+        Button btn_second = (Button)findViewById(R.id.btn_second);
+        Button btn_third = (Button)findViewById(R.id.btn_third);
 
-        Button button1 = (Button) findViewById(R.id.button1) ;
-        button1.setOnClickListener(new Button.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                switchFragment() ;
-            }
-        });
+        vp.setAdapter(new pagerAdapter(getSupportFragmentManager()));
+        vp.setCurrentItem(0);
 
-
+        btn_first.setOnClickListener(movePageListener);
+        btn_first.setTag(0);
+        btn_second.setOnClickListener(movePageListener);
+        btn_second.setTag(1);
+        btn_third.setOnClickListener(movePageListener);
+        btn_third.setTag(2);
     }
-    public void switchFragment() {
-        Fragment fr;
 
-        if (isFragmentB) {
-            fr = new FragmentB() ;
-        } else {
-            fr = new FragmentC() ;
+    View.OnClickListener movePageListener = new View.OnClickListener()
+    {
+        @Override
+        public void onClick(View v)
+        {
+            int tag = (int) v.getTag();
+            vp.setCurrentItem(tag);
         }
+    };
 
-        isFragmentB = (isFragmentB) ? false : true ;
-
-        FragmentManager fm = getFragmentManager();
-        FragmentTransaction fragmentTransaction = fm.beginTransaction();
-        fragmentTransaction.replace(R.id.fragmentBorC, fr);
-        fragmentTransaction.commit();
+    private class pagerAdapter extends FragmentStatePagerAdapter
+    {
+        public pagerAdapter(android.support.v4.app.FragmentManager fm)
+        {
+            super(fm);
+        }
+        @Override
+        public android.support.v4.app.Fragment getItem(int position)
+        {
+            switch(position)
+            {
+                case 0:
+                    return new FragmentA();
+                case 1:
+                    return new FragmentB();
+                case 2:
+                    return new FragmentC();
+                default:
+                    return null;
+            }
+        }
+        @Override
+        public int getCount()
+        {
+            return 3;
+        }
     }
-
-
 }
